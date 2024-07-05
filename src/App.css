@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+/* Basic reset for box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Custom styles for the application */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #27B7AB;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+  padding: 20px;
+}
+.container{
+  background-color: #27B7AB;
+  font-weight: bold;
+  padding-left: 10px;
+  height: 100%;
+  width:100%;
+  padding-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.airport-container{
+  background-color: darkslategrey;
+}
+.table-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.table-cell {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row:hover {
+  background-color: #e9e9e9;
+}
+
+.button {
+  margin-right: 10px;
+}
+
+.checkbox {
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.dialog-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }

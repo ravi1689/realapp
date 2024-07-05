@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Provider, defaultTheme, Grid, View } from '@adobe/react-spectrum';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import Airport from './components/Airport';
+import './App.css'
 
 function App() {
+  const [view, setView] = useState('home');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider theme={defaultTheme}>
+      <Grid
+        areas={['header header', 'sidebar content']}
+        columns={['size-3000', 'auto']}
+        rows={['size-1000', 'auto']}
+        height="100vh"
+      >
+        <View gridArea="header">
+          <Navbar />
+        </View>
+        <View gridArea="sidebar">
+          <Sidebar setView={setView} />
+        </View>
+        <View gridArea="content" padding="size-200">
+          {view === 'home' && <h2>Home</h2>}
+          {view === 'dashboard' && <h2>Dashboard</h2>}
+          {view === 'services' && <h2>Services</h2>}
+          {view === 'airport' && <Airport />}
+        </View>
+      </Grid>
+    </Provider>
   );
 }
 
